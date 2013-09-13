@@ -1,0 +1,85 @@
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/os_navigation_prototype.css">
+  </head>
+
+  <body>
+    <div id="wrapper"></div>
+
+      <header id="header"></header>
+        <div id="global_bar">
+          <a href="#" id="logo" class="pull-left"><img src="images/logo.png" alt="logo"/></a>
+
+          <div id="dashboard_selector" class="dropdown selector pull-left">
+            <span class="dropdown_trigger">Project</span>
+            <ul class="dropdown_menu">
+              <li class="active"><a href="#">Project</a></li>
+              <li><a href="#">Admin</a></li>
+            </ul>
+          </div>
+
+          <div id="context" class="dropdown selector pull-left">
+            <span class="dropdown_trigger">
+              <span class="domain">My Domain</span>
+              <span class="project">My Project</span>
+              <span class="regions">My Region</span>
+            </span>
+            <div class="dropdown_menu">
+              <ul class="domains dropdown_menu">
+                <li class="active"><span>My Domain</span></li>
+              </ul>
+
+              <ul class="projects dropdown_menu">
+                <li class="active" id="my_project"><span>My Project</span></li>
+                <li><a href="#" id="other_project">Other Project</a></li>
+              </ul>
+
+              <ul class="regions dropdown_menu" id="my_project">
+                <li class="active"><span>My Region</span></li>
+                <li><a href="#">Your Region</a></li>
+                <li><a href="#">His Region</a></li>
+              </ul>
+
+              <ul class="regions dropdown_menu" id="other_project">
+                <li><a href="#">Region 1</a></li>
+                <li><a href="#">Region 2</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="clear"></div>
+        </div>
+
+        <nav id="main_nav"></div>
+          <ul id="primary_nav" class="nav_bar">
+            <li class="active"><a href="#">Compute</a></li>
+            <li><a href="#">Network</a></li>
+            <li><a href="#">Object Storage</a></li>
+            <li><a href="#">Orchestration</a></li>
+          </ul>
+
+          <ul id="secondary_nav" class="nav_bar">
+            <li class="active"><a href="#" class="active">Overview</a></li>
+            <li><a href="#">Instances</a></li>
+            <li><a href="#">Volumes</a></li>
+            <li><a href="#">Images & Snapshots</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown_toggle">Access & Security</a>
+              <ul class="nav dropdown_menu">
+                <li><a href="#">Security Groups</a></li>
+                <li><a href="#">Keypairs</a></li>
+                <li><a href="#">Floating IPs</a></li>
+                <li><a href="#">API Access</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div id="content"></div>
+
+    </div>
+  </body>
+
+</html>
