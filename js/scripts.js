@@ -59,9 +59,10 @@ $(function () {
     $('#context .regions > ul > li').click(function () {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
-        $('#domain').html($(this).data('domain'));
-        $('#project').html($(this).data('project'));
-        $('#region').html($(this).find('a').html());
+        var link = $(this).find('a');
+        $('#domain').html(link.data('domain'));
+        $('#project').html(link.data('project'));
+        $('#region').html(link.html());
     });
     $('#context li.active').each(function () {
         var target = $($(this).find('a').attr('href'));
