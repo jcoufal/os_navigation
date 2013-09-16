@@ -44,13 +44,17 @@ $(function () {
     $('#content > *').hide();
 
     // The context selector
-    $('#context .domains > ul > li').click(function () {
+    $('#context .domains > ul > li').hover(function () {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
+        var target = $($(this).find('a').attr('href'));
+        activate(target);
     });
-    $('#context .projects > div > ul > li').click(function () {
+    $('#context .projects > div > ul > li').hover(function () {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
+        var target = $($(this).find('a').attr('href'));
+        activate(target);
     });
     $('#context .regions > ul > li').click(function () {
         $(this).siblings().removeClass('active');
