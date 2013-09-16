@@ -2,6 +2,9 @@
 
 <html>
 <head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 (experimental) for Linux https://github.com/w3c/tidy-html5/tree/c63cc39">
+
   <title>OS Navigation</title>
   <link rel="stylesheet" type="text/css" href=
   "css/os_navigation_prototype.css">
@@ -22,11 +25,11 @@
 
       <ul class="dropdown_menu">
         <li class="active">
-          <a href="#">Project</a>
+          <a href="#primary_nav-project">Project</a>
         </li>
 
         <li>
-          <a href="#">Admin</a>
+          <a href="#primary_nav-admin">Admin</a>
         </li>
       </ul>
     </div>
@@ -62,7 +65,7 @@
           </li>
         </ul>
 
-        <ul class="regions dropdown_menu" id="other_project_submenu">
+        <ul class="regions dropdown_menu" id="other_project">
           <li>
             <a href="#">Region 1</a>
           </li>
@@ -78,68 +81,118 @@
   </div>
 
   <nav id="main_nav">
-    <ul id="primary_nav" class="nav_bar">
-      <li class="active">
-        <a href="#">Compute</a>
-      </li>
 
-      <li>
-        <a href="#">Network</a>
-      </li>
-
-      <li>
-        <a href="#">Object Storage</a>
-      </li>
-
-      <li>
-        <a href="#">Orchestration</a>
-      </li>
-    </ul>
-
-    <ul id="secondary_nav" class="nav_bar">
-      <li class="active">
-        <a href="#" class="active">Overview</a>
-      </li>
-
-      <li>
-        <a href="#">Instances</a>
-      </li>
-
-      <li>
-        <a href="#">Volumes</a>
-      </li>
-
-      <li>
-        <a href="#">Images &amp; Snapshots</a>
-      </li>
-
-      <li class="dropdown">
-        <a href="#" class="dropdown_toggle">Access &amp;
-        Security</a>
-
-        <ul class="nav dropdown_menu">
-          <li>
-            <a href="#">Security Groups</a>
+    <div id="primary_nav">
+        <ul id="primary_nav-project" class="nav_bar">
+          <li class="active">
+            <a href="#secondary_nav-compute">Compute</a>
           </li>
 
           <li>
-            <a href="#">Keypairs</a>
+            <a href="#secondary_nav-object_storage">Network</a>
           </li>
 
           <li>
-            <a href="#">Floating IPs</a>
+            <a href="#">Object Storage</a>
           </li>
 
           <li>
-            <a href="#">API Access</a>
+            <a href="#">Orchestration</a>
           </li>
         </ul>
-      </li>
-    </ul>
+        <ul id="primary_nav-admin" class="nav_bar">
+          <li class="active">
+            <a href="#">System</a>
+          </li>
+        </ul>
+    </div>
+
+    <div id="secondary_nav">
+        <ul id="secondary_nav-compute" class="nav_bar">
+          <li class="active">
+            <a href="#" class="active">Overview</a>
+          </li>
+
+          <li>
+            <a href="#">Instances</a>
+          </li>
+
+          <li>
+            <a href="#">Volumes</a>
+          </li>
+
+          <li>
+            <a href="#">Images &amp; Snapshots</a>
+          </li>
+
+          <li class="dropdown dropdown-hover">
+            <a href="#" class="dropdown_toggle">Access &amp;
+            Security</a>
+
+            <ul class="nav dropdown_menu">
+              <li>
+                <a href="#">Security Groups</a>
+              </li>
+
+              <li>
+                <a href="#content-keypairs">Keypairs</a>
+              </li>
+
+              <li>
+                <a href="#">Floating IPs</a>
+              </li>
+
+              <li>
+                <a href="#">API Access</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="secondary_nav-object_storage" class="nav_bar">
+          <li class="active">
+            <a href="#" class="active">Overview</a>
+          </li>
+        </ul>
+    </div>
   </nav>
 
-  <div id="content"></div>
+  <div id="content">
+    <div id="content-keypairs">
+        <h1>Keypairs</h1>
+    </div>
+  </div>
 
   <script src="js/jquery-2.0.3.min.js"></script>
+  <script>
+    $(function () {
+        var activate = function (target) {
+            target.siblings().hide();
+            target.show();
+        };
+
+        $('.dropdown:not(.dropdowns-hover) .dropdown_trigger').click(function () {
+            $(this).next('.dropdown_menu').toggle();
+        });
+        $('.dropdown:not(.dropdown-hover) li a').click(function () {
+            $(this).closest('.dropdown_menu').hide();
+            $(this).closest('li').siblings().removeClass('active');
+            $(this).closest('li').addClass('active');
+        });
+        $('.nav_bar li').click(function () {
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+        });
+        $('.nav_bar li.active').each(function () {
+            var target = $($(this).find('a').attr('href'));
+            activate(target);
+        });
+        $('a[href!="#"]').click(function () {
+            var target = $($(this).attr('href'));
+            activate(target);
+        });
+        $('#content > *').hide();
+        $('#primary_nav > :not(#primary_nav-project)').hide();
+    });
+  </script>
 </body>
 </html>
