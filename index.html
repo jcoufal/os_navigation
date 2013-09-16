@@ -35,45 +35,47 @@
     </div>
 
     <div id="context" class="dropdown selector pull-left">
-      <span class="dropdown_trigger"><span class="domain">My
-      Domain</span> <span class="project">My Project</span>
-      <span class="regions">My Region</span></span>
+      <span class="dropdown_trigger"><span class="domain" id="domain">My
+      Domain</span> <span class="project" id="project">My Project</span>
+      <span class="regions" id="region">My Region</span></span>
 
       <div class="dropdown_menu">
-        <ul class="domains dropdown_menu">
-          <li class="active"><span>My Domain</span></li>
-        </ul>
-
-        <ul class="projects dropdown_menu">
-          <li class="active" id="my_project"><span>My
-          Project</span></li>
-
-          <li>
-            <a href="#" id="other_project">Other Project</a>
-          </li>
-        </ul>
-
-        <ul class="regions dropdown_menu" id="my_project_submenu">
-          <li class="active"><span>My Region</span></li>
-
-          <li>
-            <a href="#">Your Region</a>
-          </li>
-
-          <li>
-            <a href="#">His Region</a>
-          </li>
-        </ul>
-
-        <ul class="regions dropdown_menu" id="other_project">
-          <li>
-            <a href="#">Region 1</a>
-          </li>
-
-          <li>
-            <a href="#">Region 2</a>
-          </li>
-        </ul>
+        <div class="domains">
+            <ul>
+              <li class="active"><a href="#my_domain">My Domain</a></li>
+              <li><a href="#other_domain">Other Domain</a></li>
+            </ul>
+            <div class="projects">
+                <div id="my_domain">
+                    <ul>
+                      <li class="active"><a href="#my_project">My Project</a></li>
+                      <li><a href="#other_project">Other Project</a></li>
+                    </ul>
+                    <div class="regions">
+                        <ul id="my_project">
+                          <li class="active"><a href="#">My Region</a></li>
+                          <li><a href="#">Your Region</a></li>
+                          <li><a href="#">His Region</a></li>
+                        </ul>
+                        <ul id="other_project">
+                          <li><a href="#">Region 1</a></li>
+                          <li><a href="#">Region 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="other_domain">
+                    <ul>
+                      <li><a href="#other_other_project">Other Other Project</a></li>
+                    </ul>
+                    <div class="regions">
+                        <ul id="other_other_project">
+                          <li><a href="#">Region A</a></li>
+                          <li><a href="#">Region B</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
 

@@ -42,4 +42,30 @@ $(function () {
 
     // Start with empty content
     $('#content > *').hide();
+
+    // The context selector
+    $('#context .domains > ul > li').click(function () {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        $('#domain').html($(this).find('a').html());
+        $('#project').html('?');
+        $('#region').html('?');
+        $('.projects > div > ul > li.active').removeClass('active');
+        $('.regions > ul').hide();
+    });
+    $('#context .projects > div > ul > li').click(function () {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        $('#project').html($(this).find('a').html());
+        $('#region').html('?');
+        $('.regions > ul > li.active').removeClass('active');
+    });
+    $('#context .regions > ul > li').click(function () {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        $('#region').html($(this).find('a').html());
+    });
+    $('#other_domain').hide()
+    $('#other_project').hide()
+
 });

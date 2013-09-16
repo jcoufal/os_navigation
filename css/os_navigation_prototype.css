@@ -166,6 +166,12 @@ li a {
 #context .regions {
   width: 150px;
   min-width: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+#context ul {
+    padding: 0;
+    margin: 0;
 }
 
 /* PRIMARY */
