@@ -163,36 +163,6 @@
   </div>
 
   <script src="js/jquery-2.0.3.min.js"></script>
-  <script>
-    $(function () {
-        var activate = function (target) {
-            target.siblings().hide();
-            target.show();
-        };
-
-        $('.dropdown:not(.dropdowns-hover) .dropdown_trigger').click(function () {
-            $(this).next('.dropdown_menu').toggle();
-        });
-        $('.dropdown:not(.dropdown-hover) li a').click(function () {
-            $(this).closest('.dropdown_menu').hide();
-            $(this).closest('li').siblings().removeClass('active');
-            $(this).closest('li').addClass('active');
-        });
-        $('.nav_bar li').click(function () {
-            $(this).siblings().removeClass('active');
-            $(this).addClass('active');
-        });
-        $('.nav_bar li.active').each(function () {
-            var target = $($(this).find('a').attr('href'));
-            activate(target);
-        });
-        $('a[href!="#"]').click(function () {
-            var target = $($(this).attr('href'));
-            activate(target);
-        });
-        $('#content > *').hide();
-        $('#primary_nav > :not(#primary_nav-project)').hide();
-    });
-  </script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
