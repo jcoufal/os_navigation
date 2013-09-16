@@ -65,7 +65,8 @@ $(function () {
         $(this).addClass('active');
         $('#region').html($(this).find('a').html());
     });
-    $('#other_domain').hide()
-    $('#other_project').hide()
-
+    $('#context li.active').each(function () {
+        var target = $($(this).find('a').attr('href'));
+        activate(target);
+    });
 });
