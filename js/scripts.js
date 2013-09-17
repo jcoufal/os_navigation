@@ -1,4 +1,14 @@
 $(function () {
+    var open_dialog = null;
+
+    // Hide dialogs when clicking outside of them
+    $('body').click(function () {
+        if (open_dialog) {
+            open_dialog.hide();
+            open_dialog = null;
+        };
+    });
+
     var activate = function (target) {
         target.siblings().hide();
         target.show();
@@ -6,12 +16,18 @@ $(function () {
 
     // Dropdowns activated on click
     $('.dropdown:not(.dropdowns-hover) .dropdown_trigger').click(function () {
-        $(this).next('.dropdown_menu').toggle();
+        var menu = $(this).next('.dropdown_menu');
+        if (open_dialog) {
+            open_dialog.hide();
+            open_dialog = null;
+        } else {
+            open_dialog = menu.toggle();
+        };
+        return false;
     });
 
     // Handle active class in dropdowns
     $('.dropdown > ul > li').click(function () {
-        $(this).closest('.dropdown_menu').hide();
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
     });
