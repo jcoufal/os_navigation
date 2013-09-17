@@ -104,7 +104,7 @@
         </ul>
         <ul id="primary_nav-admin" class="nav_bar">
           <li class="active">
-            <a href="#">System</a>
+            <a href="#secondary_nav-system">System</a>
           </li>
         </ul>
     </div>
@@ -112,28 +112,28 @@
     <div id="secondary_nav">
         <ul id="secondary_nav-compute" class="nav_bar">
           <li class="active">
-            <a href="#" class="active">Overview</a>
+            <a href="#content-overview" class="active">Overview</a>
           </li>
 
           <li>
-            <a href="#">Instances</a>
+            <a href="#content-instances">Instances</a>
           </li>
 
           <li>
-            <a href="#">Volumes</a>
+            <a href="#content-volumes">Volumes</a>
           </li>
 
           <li>
-            <a href="#">Images &amp; Snapshots</a>
+            <a href="#content-images_and_snapshots">Images &amp; Snapshots</a>
           </li>
 
           <li class="dropdown dropdown-hover">
-            <a href="#" class="dropdown_toggle">Access &amp;
+            <a href="#content-access_and_security" class="dropdown_toggle">Access &amp;
             Security</a>
 
             <ul class="nav dropdown_menu">
               <li>
-                <a href="#">Security Groups</a>
+                <a href="#content-security_groups">Security Groups</a>
               </li>
 
               <li>
@@ -141,27 +141,38 @@
               </li>
 
               <li>
-                <a href="#">Floating IPs</a>
+                <a href="#content-floating_ips">Floating IPs</a>
               </li>
 
               <li>
-                <a href="#">API Access</a>
+                <a href="#content-api_access">API Access</a>
               </li>
             </ul>
           </li>
         </ul>
         <ul id="secondary_nav-object_storage" class="nav_bar">
           <li class="active">
-            <a href="#" class="active">Overview</a>
+            <a href="#content-overview" class="active">Overview</a>
+          </li>
+        </ul>
+        <ul id="secondary_nav-system" class="nav_bar">
+          <li class="active">
+            <a href="#content-overview" class="active">Overview</a>
           </li>
         </ul>
     </div>
   </nav>
 
   <div id="content">
-    <div id="content-keypairs">
-        <h1>Keypairs</h1>
-    </div>
+    <div id="content-overview"><h1>Overview</h1></div>
+    <div id="content-instances"><h1>Instances</h1></div>
+    <div id="content-volumes"><h1>Volumes</h1></div>
+    <div id="content-images_and_snapshots"><h1>Images &amp; Snapshots</h1></div>
+    <div id="content-access_and_security"><h1>Access &amp; Security</h1></div>
+    <div id="content-security_groups"><h1>Security Groups</h1></div>
+    <div id="content-keypairs"><h1>Keypairs</h1></div>
+    <div id="content-floating_ips"><h1>Floating IPs</h1></div>
+    <div id="content-api_access"><h1>API Access</h1></div>
   </div>
 
   <script src="js/jquery-2.0.3.min.js"></script>

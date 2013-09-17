@@ -58,6 +58,7 @@ $(function () {
 
     // Start with empty content
     $('#content > *').hide();
+    $('#content > #content-overview').show();
 
     // The context selector
     $('#context .domains > ul > li').hover(function () {

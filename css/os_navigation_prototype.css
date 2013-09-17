@@ -210,11 +210,11 @@ li a {
   margin-right: 0;
 }
 
-#secondary_nav .nav_bar li:hover a {
+#secondary_nav .nav_bar li:hover > a {
   border-bottom: 3px solid rgb(180, 180, 180);
 }
 
-#secondary_nav .nav_bar li.active a {
+#secondary_nav .nav_bar li.active > a {
   border-bottom: 3px solid rgb(200, 0, 0);
   color: rgb(200, 0, 0);
 }
