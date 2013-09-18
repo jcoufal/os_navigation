@@ -62,24 +62,36 @@ $(function () {
 
     // The context selector
     $('#context .domains > ul > li').hover(function () {
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
+        $(this).siblings().removeClass('hovered');
+        $(this).addClass('hovered');
+        $('#context .regions ul').hide();
+        $('#context .regions ul li.active').parent().show();
         var target = $($(this).find('a').attr('href'));
         activate(target);
     });
     $('#context .projects > div > ul > li').hover(function () {
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
+        $(this).siblings().removeClass('hovered');
+        $(this).addClass('hovered');
         var target = $($(this).find('a').attr('href'));
         activate(target);
     });
-    $('#context .regions > ul > li').click(function () {
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
-        var link = $(this).find('a');
-        $('#domain').html(link.data('domain'));
-        $('#project').html(link.data('project'));
-        $('#region').html(link.html());
+    $('#context li a').click(function () {
+        $('#context li.active').removeClass('active');
+        var domain = $(this).data('domain');
+        var project = $(this).data('project');
+        var region = $(this).data('region');
+        var domain_link = $('a[href="' + domain + '"]');
+        var project_link = $('a[href="' + project + '"]');
+        var region_link = $('a[href="' + region + '"]');
+        domain_link.closest('li').addClass('active');
+        project_link.closest('li').addClass('active');
+        region_link.closest('li').addClass('active');
+        $('#domain').html(domain_link.html());
+        $('#project').html(project_link.html());
+        $('#region').html(region_link.html());
+        $('#context .dropdown_menu').hide();
+        open_dialog = null;
+        return false;
     });
     $('#context li.active').each(function () {
         var target = $($(this).find('a').attr('href'));

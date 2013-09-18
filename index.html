@@ -42,35 +42,35 @@
       <div class="dropdown_menu">
         <div class="domains">
             <ul>
-              <li class="active"><a href="#my_domain">My Domain</a></li>
-              <li><a href="#other_domain">Other Domain</a></li>
+              <li class="active"><a href="#my_domain" data-domain="#my_domain" data-project="#my_project" data-region="#my_region">My Domain</a></li>
+              <li><a href="#other_domain" data-domain="#my_domain" data-project="#other_other_project" data-region="#region_a">Other Domain</a></li>
             </ul>
             <div class="projects">
                 <div id="my_domain">
                     <ul>
-                      <li class="active"><a href="#my_project">My Project</a></li>
-                      <li><a href="#other_project">Other Project</a></li>
+                      <li class="active"><a href="#my_project" data-domain="#my_domain" data-project="#my_project" data-region="#my_region">My Project</a></li>
+                      <li><a href="#other_project" data-domain="#my_domain" data-project="#other_project" data-region="#region_1">Other Project</a></li>
                     </ul>
                     <div class="regions">
                         <ul id="my_project">
-                          <li class="active"><a href="#">My Region</a></li>
-                          <li><a href="#" data-domain="My Domain" data-project="My Project">Your Region</a></li>
-                          <li><a href="#" data-domain="My Domain" data-project="My Project">His Region</a></li>
+                          <li class="active"><a href="#my_region" data-domain="#my_domain" data-project="#my_project" data-region="#my_region">My Region</a></li>
+                          <li><a href="#your_region" data-domain="#my_domain" data-project="#my_project" data-region="#your_region">Your Region</a></li>
+                          <li><a href="#his_region" data-domain="#my_domain" data-project="#my_project" data-region="#his_region">His Region</a></li>
                         </ul>
                         <ul id="other_project">
-                          <li><a href="#" data-domain="My Domain" data-project="Other Project">Region 1</a></li>
-                          <li><a href="#" data-domain="My Domain" data-project="Other Project">Region 2</a></li>
+                          <li><a href="#region_1" data-domain="#my_domain" data-project="#other_project" data-region="#region_1">Region 1</a></li>
+                          <li><a href="#region_2" data-domain="#my_domain" data-project="#other_project" data-region="#region_2">Region 2</a></li>
                         </ul>
                     </div>
                 </div>
                 <div id="other_domain">
                     <ul>
-                      <li><a href="#other_other_project">Other Other Project</a></li>
+                      <li><a href="#other_other_project"data-domain="#other_domain" data-project="#other_other_project" data-region="#region_a">Other Other Project</a></li>
                     </ul>
                     <div class="regions">
                         <ul id="other_other_project">
-                          <li><a href="#" data-domain="Other Domain" data-project="Other Other Project">Region A</a></li>
-                          <li><a href="#" data-domain="Other Domain" data-project="Other Other Project">Region B</a></li>
+                          <li><a href="#region_a" data-domain="#other_domain" data-project="#other_other_project" data-region="#region_a">Region A</a></li>
+                          <li><a href="#region_b" data-domain="#other_domain" data-project="#other_other_project" data-region="#region_b">Region B</a></li>
                         </ul>
                     </div>
                 </div>
