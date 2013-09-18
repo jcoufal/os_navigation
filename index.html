@@ -1,85 +1,181 @@
+<!DOCTYPE html>
+
 <html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 (experimental) for Linux https://github.com/w3c/tidy-html5/tree/c63cc39">
 
-  <head>
-    <link rel="stylesheet" type="text/css" href="css/os_navigation_prototype.css">
-  </head>
+  <title>OS Navigation</title>
+  <link rel="stylesheet" type="text/css" href=
+  "css/os_navigation_prototype.css">
+</head>
 
-  <body>
-    <div id="wrapper"></div>
+<body>
+  <div id="wrapper"></div>
 
-      <header id="header"></header>
-        <div id="global_bar">
-          <a href="#" id="logo" class="pull-left"><img src="images/logo.png" alt="logo"/></a>
+  <header id="header"></header>
 
-          <div id="dashboard_selector" class="dropdown selector pull-left">
-            <span class="dropdown_trigger">Project</span>
-            <ul class="dropdown_menu">
-              <li class="active"><a href="#">Project</a></li>
-              <li><a href="#">Admin</a></li>
-            </ul>
-          </div>
+  <div id="global_bar">
+    <a href="#" id="logo" class="pull-left"><img src=
+    "images/logo.png" alt="logo"></a>
 
-          <div id="context" class="dropdown selector pull-left">
-            <span class="dropdown_trigger">
-              <span class="domain">My Domain</span>
-              <span class="project">My Project</span>
-              <span class="regions">My Region</span>
-            </span>
-            <div class="dropdown_menu">
-              <ul class="domains dropdown_menu">
-                <li class="active"><span>My Domain</span></li>
-              </ul>
+    <div id="dashboard_selector" class=
+    "dropdown selector pull-left">
+      <span class="dropdown_trigger">Project</span>
 
-              <ul class="projects dropdown_menu">
-                <li class="active" id="my_project"><span>My Project</span></li>
-                <li><a href="#" id="other_project">Other Project</a></li>
-              </ul>
+      <ul class="dropdown_menu">
+        <li class="active">
+          <a href="#primary_nav-project">Project</a>
+        </li>
 
-              <ul class="regions dropdown_menu" id="my_project">
-                <li class="active"><span>My Region</span></li>
-                <li><a href="#">Your Region</a></li>
-                <li><a href="#">His Region</a></li>
-              </ul>
-
-              <ul class="regions dropdown_menu" id="other_project">
-                <li><a href="#">Region 1</a></li>
-                <li><a href="#">Region 2</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="clear"></div>
-        </div>
-
-        <nav id="main_nav"></div>
-          <ul id="primary_nav" class="nav_bar">
-            <li class="active"><a href="#">Compute</a></li>
-            <li><a href="#">Network</a></li>
-            <li><a href="#">Object Storage</a></li>
-            <li><a href="#">Orchestration</a></li>
-          </ul>
-
-          <ul id="secondary_nav" class="nav_bar">
-            <li class="active"><a href="#" class="active">Overview</a></li>
-            <li><a href="#">Instances</a></li>
-            <li><a href="#">Volumes</a></li>
-            <li><a href="#">Images & Snapshots</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown_toggle">Access & Security</a>
-              <ul class="nav dropdown_menu">
-                <li><a href="#">Security Groups</a></li>
-                <li><a href="#">Keypairs</a></li>
-                <li><a href="#">Floating IPs</a></li>
-                <li><a href="#">API Access</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div id="content"></div>
-
+        <li>
+          <a href="#primary_nav-admin">Admin</a>
+        </li>
+      </ul>
     </div>
-  </body>
 
+    <div id="context" class="dropdown selector pull-left">
+      <span class="dropdown_trigger"><span class="domain" id="domain">My
+      Domain</span> <span class="project" id="project">My Project</span>
+      <span class="regions" id="region">My Region</span></span>
+
+      <div class="dropdown_menu">
+        <div class="domains">
+            <ul>
+              <li class="active"><a href="#my_domain" data-domain="#my_domain" data-project="#my_project" data-region="#my_region">My Domain</a></li>
+              <li><a href="#other_domain" data-domain="#my_domain" data-project="#other_other_project" data-region="#region_a">Other Domain</a></li>
+            </ul>
+            <div class="projects">
+                <div id="my_domain">
+                    <ul>
+                      <li class="active"><a href="#my_project" data-domain="#my_domain" data-project="#my_project" data-region="#my_region">My Project</a></li>
+                      <li><a href="#other_project" data-domain="#my_domain" data-project="#other_project" data-region="#region_1">Other Project</a></li>
+                    </ul>
+                    <div class="regions">
+                        <ul id="my_project">
+                          <li class="active"><a href="#my_region" data-domain="#my_domain" data-project="#my_project" data-region="#my_region">My Region</a></li>
+                          <li><a href="#your_region" data-domain="#my_domain" data-project="#my_project" data-region="#your_region">Your Region</a></li>
+                          <li><a href="#his_region" data-domain="#my_domain" data-project="#my_project" data-region="#his_region">His Region</a></li>
+                        </ul>
+                        <ul id="other_project">
+                          <li><a href="#region_1" data-domain="#my_domain" data-project="#other_project" data-region="#region_1">Region 1</a></li>
+                          <li><a href="#region_2" data-domain="#my_domain" data-project="#other_project" data-region="#region_2">Region 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="other_domain">
+                    <ul>
+                      <li><a href="#other_other_project"data-domain="#other_domain" data-project="#other_other_project" data-region="#region_a">Other Other Project</a></li>
+                    </ul>
+                    <div class="regions">
+                        <ul id="other_other_project">
+                          <li><a href="#region_a" data-domain="#other_domain" data-project="#other_other_project" data-region="#region_a">Region A</a></li>
+                          <li><a href="#region_b" data-domain="#other_domain" data-project="#other_other_project" data-region="#region_b">Region B</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+
+  <nav id="main_nav">
+
+    <div id="primary_nav">
+        <ul id="primary_nav-project" class="nav_bar">
+          <li class="active">
+            <a href="#secondary_nav-compute">Compute</a>
+          </li>
+
+          <li>
+            <a href="#secondary_nav-object_storage">Network</a>
+          </li>
+
+          <li>
+            <a href="#">Object Storage</a>
+          </li>
+
+          <li>
+            <a href="#">Orchestration</a>
+          </li>
+        </ul>
+        <ul id="primary_nav-admin" class="nav_bar">
+          <li class="active">
+            <a href="#secondary_nav-system">System</a>
+          </li>
+        </ul>
+    </div>
+
+    <div id="secondary_nav">
+        <ul id="secondary_nav-compute" class="nav_bar">
+          <li class="active">
+            <a href="#content-overview" class="active">Overview</a>
+          </li>
+
+          <li>
+            <a href="#content-instances">Instances</a>
+          </li>
+
+          <li>
+            <a href="#content-volumes">Volumes</a>
+          </li>
+
+          <li>
+            <a href="#content-images_and_snapshots">Images &amp; Snapshots</a>
+          </li>
+
+          <li class="dropdown dropdown-hover">
+            <a href="#content-access_and_security" class="dropdown_toggle">Access &amp;
+            Security</a>
+
+            <ul class="nav dropdown_menu">
+              <li>
+                <a href="#content-security_groups">Security Groups</a>
+              </li>
+
+              <li>
+                <a href="#content-keypairs">Keypairs</a>
+              </li>
+
+              <li>
+                <a href="#content-floating_ips">Floating IPs</a>
+              </li>
+
+              <li>
+                <a href="#content-api_access">API Access</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="secondary_nav-object_storage" class="nav_bar">
+          <li class="active">
+            <a href="#content-overview" class="active">Overview</a>
+          </li>
+        </ul>
+        <ul id="secondary_nav-system" class="nav_bar">
+          <li class="active">
+            <a href="#content-overview" class="active">Overview</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+
+  <div id="content">
+    <div id="content-overview"><h1>Overview</h1></div>
+    <div id="content-instances"><h1>Instances</h1></div>
+    <div id="content-volumes"><h1>Volumes</h1></div>
+    <div id="content-images_and_snapshots"><h1>Images &amp; Snapshots</h1></div>
+    <div id="content-access_and_security"><h1>Access &amp; Security</h1></div>
+    <div id="content-security_groups"><h1>Security Groups</h1></div>
+    <div id="content-keypairs"><h1>Keypairs</h1></div>
+    <div id="content-floating_ips"><h1>Floating IPs</h1></div>
+    <div id="content-api_access"><h1>API Access</h1></div>
+  </div>
+
+  <script src="js/jquery-2.0.3.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
 </html>
