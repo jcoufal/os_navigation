@@ -85,6 +85,8 @@ $(function () {
         var $that = $(this);
         $that.siblings().removeClass('hovered');
         $that.addClass('hovered');
+        var domain = $that.find('a').data('domain');
+        $('a[href="' + domain + '"]').closest('li').addClass('hovered');
         var target = $($that.find('a').attr('href'));
         activate(target);
         return false;
