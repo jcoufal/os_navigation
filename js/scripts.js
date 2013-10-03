@@ -1,5 +1,6 @@
 $(function () {
     var open_dialog = null;
+    var context_timer = null;
 
     // Hide dialogs when clicking outside of them
     $('body').click(function () {
@@ -71,18 +72,33 @@ $(function () {
 
     // The context selector
     $('#context .domains > ul > li').hover(function () {
-        $(this).siblings().removeClass('hovered');
-        $(this).addClass('hovered');
-        $('#context .regions ul').hide();
-        $('#context .regions ul li.active').parent().show();
-        var target = $($(this).find('a').attr('href'));
-        activate(target);
+        var $that = $(this);
+        context_timer = window.setTimeout(function () {
+            $('#context li.hovered').removeClass('hovered');
+            $that.addClass('hovered');
+            $('#context .regions ul').hide();
+            $('#context .regions ul li.active').parent().show();
+            var target = $($that.find('a').attr('href'));
+            activate(target);
+        }, 300);
+    }, function () {
+        window.clearTimeout(context_timer);
     });
     $('#context .projects > div > ul > li').hover(function () {
+        var $that = $(this);
+        context_timer = window.setTimeout(function () {
+            $that.siblings().removeClass('hovered');
+            $that.addClass('hovered');
+            var target = $($that.find('a').attr('href'));
+            activate(target);
+        }, 300);
+    }, function () {
+        window.clearTimeout(context_timer);
+    });
+    $('#context .regions > ul > li').hover(function () {
+        window.clearTimeout(context_timer);
         $(this).siblings().removeClass('hovered');
         $(this).addClass('hovered');
-        var target = $($(this).find('a').attr('href'));
-        activate(target);
     });
     $('#context li a').click(function () {
         $('#context li.active').removeClass('active');
