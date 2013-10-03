@@ -71,36 +71,26 @@ $(function () {
     $('#content > #content-overview').show();
 
     // The context selector
-    $('#context .domains > ul > li').hover(function () {
+    $('#context .domains > ul > li').click(function () {
         var $that = $(this);
-        context_timer = window.setTimeout(function () {
-            $('#context li.hovered').removeClass('hovered');
-            $that.addClass('hovered');
-            $('#context .regions ul').hide();
-            $('#context .regions ul li.active').parent().show();
-            var target = $($that.find('a').attr('href'));
-            activate(target);
-        }, 300);
-    }, function () {
-        window.clearTimeout(context_timer);
+        $('#context li.hovered').removeClass('hovered');
+        $that.addClass('hovered');
+        $('#context .regions ul').hide();
+        $('#context .regions ul li.active').parent().show();
+        var target = $($that.find('a').attr('href'));
+        activate(target);
+        return false;
     });
-    $('#context .projects > div > ul > li').hover(function () {
+    $('#context .projects > div > ul > li').click(function () {
         var $that = $(this);
-        context_timer = window.setTimeout(function () {
-            $that.siblings().removeClass('hovered');
-            $that.addClass('hovered');
-            var target = $($that.find('a').attr('href'));
-            activate(target);
-        }, 300);
-    }, function () {
-        window.clearTimeout(context_timer);
+        $that.siblings().removeClass('hovered');
+        $that.addClass('hovered');
+        var target = $($that.find('a').attr('href'));
+        activate(target);
+        return false;
     });
-    $('#context .regions > ul > li').hover(function () {
-        window.clearTimeout(context_timer);
-        $(this).siblings().removeClass('hovered');
-        $(this).addClass('hovered');
-    });
-    $('#context li a').click(function () {
+    $('#context .regions > ul > li').click(function () {
+        $('#context li.hovered').removeClass('hovered');
         $('#context li.active').removeClass('active');
         var domain = $(this).data('domain');
         var project = $(this).data('project');
