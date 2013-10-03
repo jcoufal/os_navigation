@@ -56,6 +56,11 @@ $(function () {
         activate(target);
     });
 
+    // Dashboard selector
+    $('#dashboard_selector a').click(function () {
+        $('#dashboard_selector .dropdown_trigger').html($(this).html());
+    });
+
     // Start with empty content
     $('#content > *').hide();
     $('#content > #content-overview').show();
@@ -97,4 +102,15 @@ $(function () {
         var target = $($(this).find('a').attr('href'));
         activate(target);
     });
+
+    // Hover menu
+    $('.dropdown-hover .dropdown_menu').hide();
+    $('.dropdown-hover').hover(function () {
+        $(this).find('.dropdown_menu').show();
+    }, function () {
+        $(this).find('.dropdown_menu').hide();
+    }).click(function () {
+        $(this).find('.dropdown_menu').hide();
+    });
+
 });

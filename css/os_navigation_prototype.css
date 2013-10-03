@@ -68,7 +68,7 @@ html, body {
   background: rgba(0, 0, 0, .05);
 }
 
-.dropdown-hover:hover .dropdown_menu {
+.dropdown-hover .dropdown_menu {
   display: block;
 }
 
