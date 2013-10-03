@@ -94,9 +94,9 @@ $(function () {
     $('#context .regions > ul > li').click(function () {
         $('#context li.hovered').removeClass('hovered');
         $('#context li.active').removeClass('active');
-        var domain = $(this).data('domain');
-        var project = $(this).data('project');
-        var region = $(this).data('region');
+        var domain = $(this).find('a').data('domain');
+        var project = $(this).find('a').data('project');
+        var region = $(this).find('a').data('region');
         var domain_link = $('a[href="' + domain + '"]');
         var project_link = $('a[href="' + project + '"]');
         var region_link = $('a[href="' + region + '"]');
