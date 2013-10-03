@@ -12,6 +12,9 @@ $(function () {
     var activate = function (target) {
         target.siblings().hide();
         target.show();
+        target.find('> .active a').each(function () {
+            activate($($(this).attr('href')));
+        });
     };
 
     // Dropdowns activated on click
@@ -60,6 +63,7 @@ $(function () {
     $('#dashboard_selector a').click(function () {
         $('#dashboard_selector .dropdown_trigger').html($(this).html());
     });
+    activate($($('#dashboard_selector li.active a').attr('href')));
 
     // Start with empty content
     $('#content > *').hide();
