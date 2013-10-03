@@ -71,6 +71,9 @@ $(function () {
     $('#content > #content-overview').show();
 
     // The context selector
+    $('#context .dropdown_trigger').click(function () {
+        $('#context li.hovered').removeClass('hovered');
+    }); 
     $('#context .domains > ul > li').hover(function () {
         var $that = $(this);
         context_timer = window.setTimeout(function () {
@@ -89,6 +92,8 @@ $(function () {
         context_timer = window.setTimeout(function () {
             $that.siblings().removeClass('hovered');
             $that.addClass('hovered');
+            var domain = $that.find('a').data('domain');
+            $('a[href="' + domain + '"]').closest('li').addClass('hovered');
             var target = $($that.find('a').attr('href'));
             activate(target);
         }, 300);
