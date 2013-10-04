@@ -68,7 +68,7 @@ html, body {
   background: rgba(0, 0, 0, .05);
 }
 
-.dropdown-hover:hover .dropdown_menu {
+.dropdown-hover .dropdown_menu {
   display: block;
 }
 
@@ -162,16 +162,46 @@ li a {
 }
 
 #context .domains,
+#context .projects {
+    border-right: #888 3px solid;
+}
+
+#context .domains,
 #context .projects,
 #context .regions {
-  width: 150px;
+  width: 103px;
   min-width: 0;
   display: inline-block;
   vertical-align: top;
 }
 #context ul {
+    width: 103px;
     padding: 0;
     margin: 0;
+}
+
+#context li {
+    position: relative;
+}
+#context li a {
+    overflow: hidden;
+}
+#context li.hovered {
+    background-color: #ccc;
+    color: #444;
+}
+#context .domains > ul > li.hovered:after,
+#context .projects > div > ul > li.hovered:after {
+    content: " ";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 1.2em solid rgba(0, 0, 0, 0);
+    border-bottom: 1.2em solid rgba(0, 0, 0, 0);
+    border-left: 0.75em solid #ccc; 
+    position: absolute;
+    top: 0;
+    right: -0.75em;
 }
 
 /* PRIMARY */
